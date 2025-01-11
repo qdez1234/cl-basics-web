@@ -2,12 +2,12 @@
   <div class="login">
     <div class="login-logo-img"></div>
     <el-form ref="loginRef" :model="loginForm" :rules="loginRules" class="login-form" label-position="top">
-      <h3 class="title">{{ $t('userLogin') }}</h3>
-      <el-form-item prop="username" :label="$t('account')">
+      <h3 class="title">用户登陆</h3>
+      <el-form-item prop="username" label="账号">
         <el-input v-model="loginForm.username" link type="primary" size="large" auto-complete="off" placeholder="账号">
         </el-input>
       </el-form-item>
-      <el-form-item prop="password" :label="$t('password')">
+      <el-form-item prop="password" label="密码">
         <el-input v-model="loginForm.password" type="password" size="large" auto-complete="off" placeholder="密码"
           @keyup.enter="handleLogin">
         </el-input>
@@ -21,19 +21,19 @@
           <img :src="codeUrl" @click="getCode" class="login-code-img" />
         </div>
       </el-form-item>
-      <el-checkbox v-model="loginForm.rememberMe" style="margin:0px 0px 25px 0px;">{{ $t('Remember.the.password') }}</el-checkbox>
+      <el-checkbox v-model="loginForm.rememberMe" style="margin:0px 0px 25px 0px;">记住密码</el-checkbox>
       <el-form-item style="width:100%;">
         <el-button :loading="loading" size="large" type="primary" style="width:100%;padding: 15px 20px;font-size: 16px;"
           @click.prevent="handleLogin">
-          <span v-if="!loading">{{ $t('Log.in') }}</span>
-          <span v-else>{{ $t('loading') }}...</span>
+          <span v-if="!loading">登陆</span>
+          <span v-else>登陆中</span>
         </el-button>
       </el-form-item>
     </el-form>
     <!--  底部  -->
     <!-- 侧栏 -->
     <div class="side-bg">
-      <h4 class="side-text">{{ $t('Welcome.caile') }}</h4>
+      <h4 class="side-text"></h4>
     </div>
     <div class="el-login-footer">
       <!-- <span>Copyright © 2018-2022 ruoyi.vip All Rights Reserved.</span> -->
